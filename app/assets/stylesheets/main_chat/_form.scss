@@ -18,6 +18,8 @@
     height: 50px;
     position: absolute;
     right: 10px;
+    line-height: 50px;
+    font-size: 25px;
     &--none {
       display: none; // 「ファイルを選択」という部分を非表示にする
     }
