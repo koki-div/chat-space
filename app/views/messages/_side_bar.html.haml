@@ -5,11 +5,11 @@
         USER NAME
       %ul.Icon-list
         %li.Icon-list__Icon
-        = link_to "/groups/new", class: "Icon-list__Icon Icon-list__Icon--edit" do
-          = icon('fas', 'edit',  class: "Icon-list__Icon--icon") 
-        = link_to "/users/373/edit", class: "Icon-list__Icon Icon-list__Icon--setting" do
-          = icon('fas', 'cog',  class: "Icon-list__Icon--icon") 
-
+          %a{ href: '/groups/new', class: 'Icon-list__Icon' }
+            = icon('fas', 'edit',  class: "Icon-list__Icon--icon")
+        %li.Icon-list__Icon
+          %a{ href: '/users/373/edit', class: 'Icon-list__Icon' }
+            = icon('fas', 'cog',  class: "Icon-list__Icon--icon")
   .Group-list
     .Group
       .Group__name
