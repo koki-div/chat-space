@@ -1,6 +1,6 @@
-%div.Side-bar
-  %div.Left-header
-    %div.Left-header__list
+.Side-bar
+  .Left-header
+    .Left-header__list
       %h3.Left-header__user-name
         USER NAME
       %ul.Icon-list
@@ -10,9 +10,9 @@
         = link_to "/users/373/edit", class: "Icon-list__Icon Icon-list__Icon--setting" do
           = icon('fas', 'cog',  class: "Icon-list__Icon--icon") 
 
-  %div.Group-list
-    %div.Group
-      %div.Group__name
+  .Group-list
+    .Group
+      .Group__name
         GROUP NAME
-      %div.Group__message
+      .Group__message
         Message is displayed here.
