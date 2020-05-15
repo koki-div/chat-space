@@ -1,0 +1,7 @@
+.Message-field {
+  background-color: $dark_white;
+  box-sizing: border-box;
+  padding: 35px 40px 0;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
+}

@@ -1,9 +1,29 @@
 @import "reset";
 @import "variables";
 @import "modules/messages";
+
+@import "wrapper";
+
 @import "side_bar/side_bar";
 @import "side_bar/left_header";
 @import "side_bar/user_name";
 @import "side_bar/icon_list";
+
+@import "side_bar/group_list/group-list";
+@import "side_bar/group_list/group";
+
+@import "main_chat/chat";
+@import "main_chat/right_header";
+
+@import "main_chat/ul";
+@import "main_chat/li";
+
+@import "main_chat/message_field";
+@import "main_chat/message_info";
+@import "main_chat/message";
+
+@import "main_chat/footer";
+@import "main_chat/form";
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
