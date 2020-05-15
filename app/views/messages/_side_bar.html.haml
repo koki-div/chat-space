@@ -1,0 +1,19 @@
+<サイドバー>
+%div.Side-bar
+  %div.Left-header
+    %div.Left-header__list
+      %h3.Left-header__user-name
+        koki
+      %ul.Icon-list
+        %li.Icon-list__Icon
+        = link_to "/groups/new", class: "Icon-list__Icon Icon-list__Icon--edit" do
+          = icon('fas', 'fa-edit',  class: "Icon-list__Icon--icon") 
+          E
+        = link_to "/users/373/edit", class: "Icon-list__Icon Icon-list__Icon--setting" do
+          = icon('fas', 'fa-cog',  class: "Icon-list__Icon--icon") 
+          S
+
+  %div.Group-list
+    %div.Group
+      %div.Group__name
+      %div.Group__message
