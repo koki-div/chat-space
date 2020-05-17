@@ -1,0 +1,10 @@
+.Group {
+  padding: 20px 0 40px;
+  &__name {
+    font-size: 15px;
+  }
+  &__message {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}

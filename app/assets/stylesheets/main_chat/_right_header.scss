@@ -1,0 +1,33 @@
+.Right-header {
+  height: 100px;
+  padding: 0 40px;
+  border-bottom: solid 1px #eee;
+  display: flex;
+  justify-content: space-between;
+  &__group {
+  }
+  &__group-name {
+    color: $black;
+    font-size: 20px;
+    margin-top: 35px;
+  }
+  &__member-list {
+    color: $light_gray;
+    display: flex;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  &__member {
+    padding-right: 5px;
+  }
+  &__edit-btn {
+    display: block;
+    border: 1px solid $Cyan;
+    color: $Cyan;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 28px;
+    padding: 0 20px;
+    text-decoration: none;
+  }
+}

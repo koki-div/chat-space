@@ -1,0 +1,11 @@
+.Message-info {
+  display: flex;
+  &__user-name {
+    color: $light_black;
+  }
+  &__date {
+    color: $light_gray;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}

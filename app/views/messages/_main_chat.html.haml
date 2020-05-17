@@ -1,0 +1,36 @@
+.Chat
+  .Right-header
+    .Right-header__group
+      .Right-header__group-name
+        Group name is displayed here.
+      %ul.Right-header__member-list
+        Member:
+        %li.Right-header__member
+          Members are displayed here.
+    .Right-header__group
+      = link_to 'Edit', 'groups/636/edit', class: "Right-header__edit-btn"
+  .Message-field
+    .Message-box
+      .Message-info
+        .Message-info__user-name
+          USER NAME
+        .Message-info__date
+          2020年5月14日  21時
+      .Message
+        %p.Message__content
+          Message is displayed here.
+        %img.Message__image
+          -# = image_tag 'ファイル名。拡張子', size: "100x100", alt: "オルタネイトテキスト"
+          
+
+
+  .Footer
+    %form.Form
+      .Form__contents
+        %input.Form__input-content{placeholder: "type a message", type: "text", name: "message[content]", id: "message_content"}
+
+          %label.Form__input-image
+            = icon('far', 'image', class: 'Form_icon')
+            %input.Form__input-image--none{type: "file"}
+        
+      %input.Form__submit{type: "submit", name: "commmit", value: "Send"}

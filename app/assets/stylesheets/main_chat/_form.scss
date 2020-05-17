@@ -1,0 +1,42 @@
+.Form {
+  display: flex;
+  justify-content: space-between;
+  &__contents {
+    width: 100%;
+    background-color: $white;
+    position: relative;
+  }
+
+  &__input-content {
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding: 0 45px 0 15px;
+  }
+
+  &__input-image {
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    line-height: 50px;
+    font-size: 25px;
+    &--none {
+      display: none; // 「ファイルを選択」という部分を非表示にする
+    }
+  }
+
+  &__icon {
+    line-height: 50px;
+    font-size: 25px;
+  }
+
+  &__submit {
+    background-color: $Cyan;
+    border: none;
+    color: $white;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}
