@@ -5,15 +5,17 @@
         = current_user.name
       %ul.Icon-list
         %li.Icon-list__Icon
-          = link_to "/groups/new", class: "Icon-list__Icon" do
+          = link_to new_group_path, class: "Icon-list__Icon" do
             = icon('fas', 'edit',  class: "Icon-list__Icon--icon")
         %li.Icon-list__Icon
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog',  class: "Icon-list__Icon--icon") 
 
   .Group-list
-    .Group
-      .Group__name
-        GROUP NAME
-      .Group__message
-        Message is displayed here.
+    - current_user.groups.each do |group|  # current_user.groups によってログイン中のユーザーが所属している全グループのレコードを取得
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージ投稿機能実装前のため、まだメッセージを表示することができません
