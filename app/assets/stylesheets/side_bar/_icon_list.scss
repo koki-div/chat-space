@@ -11,5 +11,8 @@
     line-height: 1; 
     color: $white;
     text-decoration: none;
+    &--icon {
+      color: $white;
+    }
   }
 }
