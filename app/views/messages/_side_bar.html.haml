@@ -14,8 +14,8 @@
   .Group-list
     - current_user.groups.each do |group|  # current_user.groups によってログイン中のユーザーが所属している全グループのレコードを取得
       .Group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group__name
             = group.name
           .Group__message
-            メッセージ投稿機能実装前のため、まだメッセージを表示することができません
+            = group.show_last_message      # show_last_message は group.rb にて定義
