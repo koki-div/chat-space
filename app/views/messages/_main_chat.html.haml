@@ -1,36 +1,25 @@
 .Chat
   .Right-header
     .Right-header__group
-      .Right-header__group-name
-        Group name is displayed here.
+      .Right-header__group-name  
+        = @group.name
       %ul.Right-header__member-list
         Member:
-        %li.Right-header__member
-          Members are displayed here.
+        - @group.group_users.each do |group|
+          %li.Right-header__member
+            = group.user.name
     .Right-header__group
-      = link_to 'Edit', 'groups/636/edit', class: "Right-header__edit-btn"
+      = link_to 'Edit', edit_group_path(@group), class: "Right-header__edit-btn"
+      
   .Message-field
-    .Message-box
-      .Message-info
-        .Message-info__user-name
-          USER NAME
-        .Message-info__date
-          2020年5月14日  21時
-      .Message
-        %p.Message__content
-          Message is displayed here.
-        %img.Message__image
-          -# = image_tag 'ファイル名。拡張子', size: "100x100", alt: "オルタネイトテキスト"
-          
-
+    = render @messages
+-#  = render partial: 'message', collection: @messages とも記述できる
 
   .Footer
-    %form.Form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|   # [@group, @message] -> messagesのルーティングがgroupsにネストされているため
       .Form__contents
-        %input.Form__input-content{placeholder: "type a message", type: "text", name: "message[content]", id: "message_content"}
-
-          %label.Form__input-image
-            = icon('far', 'image', class: 'Form_icon')
-            %input.Form__input-image--none{type: "file"}
-        
-      %input.Form__submit{type: "submit", name: "commmit", value: "Send"}
+        = f.text_field :content, class: 'Form__input-content', placeholder: 'type a message'
+        = f.label :image, class: 'Form__input-image' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+        = f.submit 'Send', class: 'Form__submit'
