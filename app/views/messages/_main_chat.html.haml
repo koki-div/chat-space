@@ -4,7 +4,7 @@
       .Right-header__group-name  
         = @group.name
       %ul.Right-header__member-list
-        Member:
+        Member：
         - @group.group_users.each do |group|
           %li.Right-header__member
             = group.user.name
