@@ -10,10 +10,12 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)  # @group は下部 set_group において定義済み
     # メッセージが正常に保存された場合とそうでない場合で条件分岐
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |format|
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user)
-      flash.now[alert] = 'メッセージを入力してください。'
+      flash.now[:alert] = 'メッセージを入力してください。'
       render :index
     end
   end
@@ -26,6 +28,5 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
-    # binding.pry
   end
 end
