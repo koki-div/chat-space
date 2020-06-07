@@ -4,7 +4,7 @@
       .Right-header__group-name  
         = @group.name
       %ul.Right-header__member-list
-        Member:
+        Member：
         - @group.group_users.each do |group|
           %li.Right-header__member
             = group.user.name
@@ -12,14 +12,13 @@
       = link_to 'Edit', edit_group_path(@group), class: "Right-header__edit-btn"
       
   .Message-field
-    = render @messages
--#  = render partial: 'message', collection: @messages とも記述できる
+    = render @messages #  = render partial: 'message', collection: @messages とも記述できる
 
   .Footer
-    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|   # [@group, @message] -> messagesのルーティングがgroupsにネストされているため
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f| # [@group, @message] -> messagesのルーティングがgroupsにネストされているため
       .Form__contents
         = f.text_field :content, class: 'Form__input-content', placeholder: 'type a message'
         = f.label :image, class: 'Form__input-image' do
+          = f.file_field :image, class: 'Form__input-image--none'
           = icon('far', 'image', class: 'Form__icon')
-          = f.file_field :image, class: 'Hidden'
-        = f.submit 'Send', class: 'Form__submit'
+      = f.submit 'Send', class: 'Form__submit'

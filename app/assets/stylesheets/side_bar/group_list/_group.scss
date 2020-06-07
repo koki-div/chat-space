@@ -1,6 +1,6 @@
 .Group {
   padding: 20px 0 40px;
-  
+  text-decoration: none;
   &__name {
     font-size: 15px;
     color: $white;                   // 実装に伴って文字色が青に変色したため追加
