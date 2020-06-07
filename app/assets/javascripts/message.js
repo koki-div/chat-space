@@ -1,5 +1,4 @@
 $(function(){
-
   function buildHTML(message){
     // 画像がある場合の処理
     if ( message.image ) {
@@ -43,13 +42,13 @@ $(function(){
     };
   }
 
-  $('Form').on('submit', function(e){
+  $('.Form').on('submit', function(e){
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
       url: url,  //同期通信でいう『パス』
-      type: 'POST',             //同期通信でいう『HTTPメソッド』
+      type: "POST",             //同期通信でいう『HTTPメソッド』
       data: formData,  
       dataType: 'json',
       processData: false,
@@ -59,11 +58,13 @@ $(function(){
       let html = buildHTML(data);
       $('.Message-field').append(html); 
       $('.Message-field').animate({ scrollTop: $('.Message-field')[0].scrollHeight});
-      $('Form')[0].reset();
-      $('.Form__submit').prop('disabled', false);
+      $('.Form')[0].reset();
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+    })
+    .always(function() {
+      $('.Form__submit').prop('disabled', false);
     });
   });
 })
