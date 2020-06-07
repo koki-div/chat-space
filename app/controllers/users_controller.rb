@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  # json用のレスポンスを返せるようにする
+  def index
+    respond_to do |format|
+      format.json
+    end
+  end
+  
   def edit
   end
 
