@@ -20,6 +20,17 @@ $(function(){
     $("#UserSearchResult").append(html);
   }
 
+  function addMember(name, id) {
+    let html = `
+                <div class="ChatMember">
+                  <p class="ChatMember__name">${name}</p>
+                  <input name="group[user_ids][]" type="hidden" value="${id}" />
+                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                </div>
+                `;
+    $(".ChatMembers").append(html);
+  }
+
   $('#UserSearch__field').on('keyup', function(){
     let input = $('#UserSearch__field').val();    //フォームの値を取得して変数に代入する
     $.ajax({
@@ -44,6 +55,17 @@ $(function(){
     })
     .fail(function() {
       alert("通信エラーです。ユーザーが表示できません。");
+    });
+    // 後から追加された「追加」ボタンに対するイベント発火
+    $("#UserSearchResult").on("click", ".ChatMember__add", function() {
+      const userName = $(this).attr("data-user-name");
+      const userId = $(this).attr("data-user-id");
+      $(this).parent().remove();
+      addMember(userName, userId);
+    });
+    // 「削除」ボタンを押したときに発火するイベント
+    $(".ChatMembers").on("click", ".ChatMember__remove", function() {
+      $(this).parent().remove();
     });
   })  
 });
