@@ -1,6 +1,9 @@
 .Group {
+  box-sizing: border-box;
   padding: 20px 0 40px;
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
   &__name {
     font-size: 15px;
     color: $white;                   // 実装に伴って文字色が青に変色したため追加
@@ -12,4 +15,5 @@
     color: $white;                   // 実装に伴って文字色が青に変色したため追加
     text-decoration: none;           // -> 下線を消そうと試みるも効果無し
   }
+
 }
