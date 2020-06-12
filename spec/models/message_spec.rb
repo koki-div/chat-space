@@ -37,11 +37,10 @@ RSpec.describe Message, type: :model do
         expect(message.errors[:group]).to include("を入力してください")
       end
      
-      # （エラーあり: ）: group_idが無いと保存できない
+      # （以下エラー含有: ）: group_idが無いと保存できない
       # it 'is invalid without group_id' do
       #   message = build(:message, group_id: nil)
       #   message.valid?
-      #   binding.pry
       #   expect(message.errors[:group]).to include("を入力して下さい")
       # end
 

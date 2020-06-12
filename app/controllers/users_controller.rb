@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # updateアクションをコメントアウト状況での動作確認済み（ajaxが正常に機能）
   def update
     if current_user.update(user_params)
       redirect_to root_path

@@ -14,7 +14,6 @@ class GroupsController < ApplicationController
     else
       render :new                                           # 新規登録画面を表示
     end
-    # binding.pry
   end
 
   def edit
@@ -23,7 +22,6 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    # binding.pry
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: "グループを更新しました"
     else

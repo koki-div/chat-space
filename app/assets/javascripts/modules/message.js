@@ -1,9 +1,10 @@
 $(function(){
+  
   function buildHTML(message){
     // 画像がある場合の処理
     if ( message.image ) {
       let html =
-        `<div class="Message-box">
+        `<div class="Message-box" data-message-id=${message.id}>
           <div class="Message-info">
             <div class="Message-info__user-name">
               ${message.user_name}
@@ -23,7 +24,7 @@ $(function(){
     } else {
     // 画像がない場合の処理
       let html =
-      `<div class="Message-box">
+      `<div class="Message-box" data-message-id=${message.id}>
         <div class="Message-info">
           <div class="Message-info__user-name">
             ${message.user_name}
@@ -67,4 +68,4 @@ $(function(){
       $('.Form__submit').prop('disabled', false);
     });
   });
-})
+});
