@@ -1,10 +1,3 @@
 .SettingGroupForm
   %h1 チャットグループ編集
   = render partial: 'form', locals: { group: @group }
-
-
--# はじめは以下のコードを記述していが、部分テンプレート化したため、削除された。
--# = form_with model: @group, local: true do |f|
--#   = f.text_field :name, class: "SettingGroupForm__input", placeholder: "グループ名を入力してください"
--#   = f.collection_check_boxes :user_ids, User.all, :id, :name
--#   = f.submit "Save", class: "SettingGroupForm__button"

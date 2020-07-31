@@ -11,8 +11,12 @@
     line-height: 1; 
     color: $white;
     text-decoration: none;
-    &--icon {
-      color: $white;
+    &--icon_pen {
+      color: magenta;
     }
+    &--icon_gear {
+      color: lime;
+    }
+    
   }
 }

@@ -64,8 +64,8 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     })
-    .always(function() {
+    .always(function(){
       $('.Form__submit').prop('disabled', false);
-    });
+    })
   });
 });

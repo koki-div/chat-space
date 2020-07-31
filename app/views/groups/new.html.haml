@@ -1,9 +1,3 @@
 .SettingGroupForm
   %h1 新規チャットグループ
   = render partial: 'form', locals: { group: @group }
-
--# はじめは以下のコードを記述していが、部分テンプレート化したため、削除された。
--# = form_with model: @group, local: true do |f|  # form_with(model: @group, local: true) do |f| -> のように括弧をつけても処理は変化しない
--#   = f.text_field :name ,class: "SettingGroupForm__input", placeholder: "グループ名を入力してください"
--#   = f.collection_check_boxes :user_ids, User.all, :id, :name
--#   = f.submit "Save", class:"SettingGroupForm__button"
